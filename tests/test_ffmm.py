@@ -125,3 +125,6 @@ def test_build_writes_latest_json_and_readme_block(tmp_path):
     text = readme.read_text()
     assert "Latest reading: September 2022" in text and "\nold\n" not in text and text.endswith("rest\n")
     assert (tmp_path / "figs" / "banks-light.png").exists()
+    readme.write_text("<!-- latest:start -->\n<!-- latest:end -->\n")  # empty block, as in a fresh README
+    build.build(tmp_path, tmp_path / "figs", readme)
+    assert "Latest reading" in readme.read_text()

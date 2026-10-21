@@ -123,8 +123,8 @@ def _fmt(value: float | None, unit: str) -> str:
     if unit == "share":
         return f"{value:.1%}"
     if unit == "years":
-        return f"{value:.2f}"
-    return f"{value:,.1f}"
+        return f"{value:.2f} years"
+    return f"CLP {value:,.1f} tn"
 
 
 def _fmt_change(x: dict) -> str:
@@ -162,8 +162,8 @@ def readme_block(data: dict) -> str:
 def write_readme(readme: Path, block: str) -> None:
     text = readme.read_text(encoding="utf-8")
     new = re.sub(
-        r"(<!-- latest:start -->\n).*?(\n<!-- latest:end -->)",
-        lambda m: m.group(1) + block + m.group(2),
+        r"(<!-- latest:start -->\n)(?:.*?\n)?(<!-- latest:end -->)",
+        lambda m: m.group(1) + block + "\n" + m.group(2),
         text,
         flags=re.S,
     )
