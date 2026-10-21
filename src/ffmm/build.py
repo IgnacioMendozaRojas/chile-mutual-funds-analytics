@@ -290,13 +290,15 @@ def figures(t: dict[str, pd.DataFrame], figs: Path) -> None:
 
     # 6. Equities
     eq = _wide(t["equities"], "ticker").loc[last].nlargest(10)
+    top = list(eq.index[:2])
     for c in charts(
-        f"{eq.index[0]} and {eq.index[1]} are the largest Chilean stocks held by mutual funds",
+        f"{' and '.join(top)} {'are' if len(top) > 1 else 'is'} the largest Chilean "
+        f"{'stocks' if len(top) > 1 else 'stock'} held by mutual funds",
         f"Chilean equities held by mutual funds, ten largest positions, {_month(last)}, CLP billion",
         source,
         size=(9, 4.6),
     ):
-        c.hbars(list(eq.index), list(eq.values), highlight={eq.index[0], eq.index[1]})
+        c.hbars(list(eq.index), list(eq.values), highlight=set(top))
         c.fig.subplots_adjust(left=0.16, right=0.92, top=0.8, bottom=0.2)
         c.save(figs, "equities")
 
