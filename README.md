@@ -3,9 +3,33 @@
 [![CI](https://github.com/IgnacioMendozaRojas/chile-mutual-funds-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/IgnacioMendozaRojas/chile-mutual-funds-analytics/actions/workflows/ci.yml)
 [![Update data](https://github.com/IgnacioMendozaRojas/chile-mutual-funds-analytics/actions/workflows/update.yml/badge.svg)](https://github.com/IgnacioMendozaRojas/chile-mutual-funds-analytics/actions/workflows/update.yml)
 
-**How much short-term funding do Chilean banks get from mutual funds, and how concentrated is it?**
+**Liquidity risk and bank funding.** Every Chilean mutual fund's holdings, month by month since January 2019, read as a liquidity-risk question: how much short-term funding banks get from mutual funds, how concentrated it is, and how fast it can leave.
 
-What every Chilean mutual fund holds, month by month since January 2019, from the portfolios filed with the CMF (Comisión para el Mercado Financiero): 3.2 million holdings and 156,000 derivative positions across 440 to 570 funds. A workflow adds each new month as the CMF publishes it.
+> At Banco Ripley I work on liquidity risk (deposit balance decay, ILAAP projections under Basel III, cash-flow stress tests) and collect fund and portfolio data with Python and web scraping. This repository applies the same work to public data: 3.2 million holdings and 156,000 derivative positions filed with the CMF, kept current by a scheduled workflow. No bank data or parameters.
+
+## Results
+
+- **Six banks take 78% of the CLP 38.5 trillion that mutual funds lend to banks**, and 56% of funds' domestic fixed income matures within a year: a large, concentrated and short source of funding.
+- **It has run before.** Funds' bank deposits fell 25% in one month (October 2021), 45% in three months and 63% in twelve, from CLP 20.8 trillion (April 2020) to 4.6 trillion (February 2022). Those are observed run-off rates a liquidity stress test can be calibrated on.
+- **Most foreign exposure is unhedged.** Only 12% of CLP 10.4 trillion in foreign-currency assets is covered by US dollars sold forward, and the share fell as the assets doubled after 2024.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/banks-dark.png">
+  <img alt="Bank deposits and bonds held by mutual funds by bank, September 2026: Santander, Itaú, BICE, Banco de Chile, Scotiabank and BCI each hold 4.7 to 5.3 trillion pesos" src="docs/figures/banks-light.png">
+</picture>
+
+## What this shows
+
+| Task in a liquidity-risk team | Where it is done here |
+|---|---|
+| Measure funding concentration by provider and by bank | Bank funding by issuer and issuer HHI, every month ([`analysis.py`](src/ffmm/analysis.py)) |
+| Calibrate run-off rates for a stress scenario | Worst 1-, 3- and 12-month outflows on record ([`outflows.csv`](data/processed/outflows.csv)) |
+| Track the maturity profile of wholesale funding | Share maturing within a year and average remaining maturity |
+| Check FX risk and hedging of a portfolio | Foreign-currency assets against USD forwards, fund by fund, with dirty forward rows cleaned |
+| Collect regulatory data that has no API | [cmf-ffmm-etl](https://github.com/IgnacioMendozaRojas/cmf-ffmm-etl) reads the portal and runs quality checks; this repository adds the analysis |
+| Keep a report current without manual work | A scheduled workflow adds each month, regenerates figures and the table below, and fails loudly on bad files |
+
+## Latest reading
 
 <!-- latest:start -->
 **Latest reading: September 2026.** Mutual funds held CLP 38.5 trillion of bank deposits and bonds in September 2026, 49% of everything they own; the six largest banks take 78%.
@@ -23,25 +47,25 @@ What every Chilean mutual fund holds, month by month since January 2019, from th
 *Updated automatically on 2026-10-21 from the CMF files. CLP tn = CLP trillion (10^12). A note gives the month when an indicator lags the others.*
 <!-- latest:end -->
 
+## Findings, as of September 2026
+
+**1. The industry more than doubled, to CLP 79 trillion.** Holdings at market value went from CLP 32.9 trillion in January 2019 to CLP 79.2 trillion in September 2026. Fund units held by other funds are excluded, so nothing is counted twice. Almost all of the growth came after 2023.
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/composition-dark.png">
   <img alt="Holdings by asset class, 2019-2026" src="docs/figures/composition-light.png">
 </picture>
 
-## Findings, as of September 2026
+**2. In 2020-22 the money left the banks for the Central Bank, then came back.** Bank deposits held by funds fell from CLP 20.8 trillion (April 2020) to CLP 4.6 trillion (February 2022), while Central Bank paper rose from CLP 2.0 trillion to CLP 13.2 trillion. The timing coincides with the pension-fund withdrawals (from July 2020) and the Central Bank's rate hikes (from July 2021). The issuer concentration index (HHI) of domestic fixed income went from about 700 to 2,522, because a single issuer, the Central Bank, held over a third of the portfolio. Bank deposits only recovered their January 2019 level in mid-2024.
 
-**1. The industry more than doubled, to CLP 79 trillion.** Holdings at market value went from CLP 32.9 trillion in January 2019 to CLP 79.2 trillion in September 2026. Fund units held by other funds are excluded, so nothing is counted twice. Almost all of the growth came after 2023.
-
-**2. In 2021-22 the money left the banks for the Central Bank, then came back.** Bank deposits held by funds fell from CLP 13.1 trillion (January 2021) to CLP 4.6 trillion (February 2022). Over the same months, Central Bank paper rose from CLP 6.6 trillion to CLP 13.4 trillion. The timing coincides with the pension-fund withdrawals and the start of the Central Bank's rate hikes. The issuer concentration index (HHI) of domestic fixed income went from about 700 to 2,522, because a single issuer, the Central Bank, held over a third of the portfolio. Bank deposits only recovered their January 2019 level in mid-2024.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/funding-shift-dark.png">
+  <img alt="Bank deposits held by funds fall from 20.8 to 4.6 trillion between April 2020 and February 2022 while Central Bank paper rises" src="docs/figures/funding-shift-light.png">
+</picture>
 
 **3. Mutual funds are a large, concentrated source of bank funding.** In September 2026 funds held CLP 38.5 trillion in bank deposits and bank bonds, 49% of everything they own. Six banks take 78% of it, each between 12% and 14%: Santander, Itaú, BICE, Banco de Chile, Scotiabank and BCI. More than half of domestic fixed income (56%) matures within a year, so this money is short-term and can leave quickly. For a bank's liquidity-risk team, that is the reason to watch this data.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/banks-dark.png">
-  <img alt="Bank deposits and bonds held by funds, by bank" src="docs/figures/banks-light.png">
-</picture>
-
-**4. Duration followed the rate cycle.** The market-value-weighted remaining maturity of domestic fixed income was about 2.0 years in 2019-2021. It fell to 1.26 years in October 2023 and is back to 1.9 years. The inflation-linked (UF) share went from a low of 26% (April 2020) to 44%.
+**4. Duration followed the rate cycle.** The market-value-weighted remaining maturity of domestic fixed income was about 2.0 years in 2019-2021. It fell to 1.26 years in October 2023, when 75% of it matured within a year, and is back to 1.9 years (56% within a year). The inflation-linked (UF) share went from a low of 26% (April 2020) to 44%.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/maturity-dark.png">

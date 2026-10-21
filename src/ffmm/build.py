@@ -10,8 +10,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from . import figures as fg
 from . import store
+from .figstyle import charts
 
 GROUPS = {
     "Bank deposits": "Banks (deposits and bonds)",
@@ -66,6 +66,19 @@ METRICS = [
     ("holdings_tn", "Total holdings (fund-of-fund units excluded)", "CLP tn", "pct"),
     ("fx_hedge_ratio", "Foreign-currency assets hedged with US$ forwards", "share", "pp"),
 ]
+
+
+def outflows(t: dict[str, pd.DataFrame], horizons=(1, 3, 12)) -> pd.DataFrame:
+    """Worst observed change in bank funding from funds over 1, 3 and 12 months: a run-off calibration."""
+    comp = _wide(t["composition"], "asset_class").reindex(columns=sorted(BANK_CLASSES), fill_value=0.0)
+    rows = []
+    for name, x in [("Bank deposits", comp["Bank deposits"]), ("Bank deposits and bonds", comp.sum(axis=1))]:
+        for k in horizons:
+            change = x / x.shift(k) - 1
+            rows.append(
+                {"funding": name, "months": k, "worst_change": round(change.min(), 4), "ending": change.idxmin()}
+            )
+    return pd.DataFrame(rows)
 
 
 def latest(s: pd.DataFrame, updated: dt.date | None = None) -> dict:
@@ -170,64 +183,127 @@ def write_readme(readme: Path, block: str) -> None:
     readme.write_text(new, encoding="utf-8")
 
 
+def _x(index) -> list:
+    return [pd.Timestamp(str(p)) for p in index]
+
+
+def _month(p: str) -> str:
+    return pd.Period(p, "M").strftime("%b %Y")
+
+
 def figures(t: dict[str, pd.DataFrame], figs: Path) -> None:
     comp = _wide(t["composition"], "asset_class")
-    grouped = comp.T.groupby(lambda c: GROUPS.get(c, "Other")).sum().T
-    grouped = grouped[[g for g in dict.fromkeys(GROUPS.values()) if g in grouped]] / 1000
     first, last = comp.index[0], comp.index[-1]
-    fg.stacked(
-        grouped,
-        figs,
-        "composition",
-        "Where Chilean mutual funds invest",
-        f"Holdings at market value, CLP trillion, {first} to {last}; fund-of-fund units excluded",
-        "CLP trillion",
+    repo = "github.com/IgnacioMendozaRojas/chile-mutual-funds-analytics"
+    source = (
+        f"Source: CMF mutual fund portfolio files, {_month(first)} to {_month(last)}; market values, fund-of-fund "
+        f"units excluded. {repo}"
     )
+    x = _x(comp.index)
+
+    # 1. Hero: concentration of the funding banks get from mutual funds
     banks = _wide(t["banks"], "bank")
-    fg.bars(
-        banks.loc[last].nlargest(8),
-        figs,
-        "banks",
-        "Bank deposits and bonds held by mutual funds",
-        f"By issuing bank, {last}, CLP billion",
-        "CLP billion",
-    )
+    latest = banks.loc[last].sort_values(ascending=False)
+    top6 = latest.head(6)
+    shown = pd.concat([latest.head(8), pd.Series({"Other banks": latest.iloc[8:].sum()})])
+    for c in charts(
+        f"Six banks take {top6.sum() / latest.sum():.0%} of the CLP {latest.sum() / 1000:.1f} trillion "
+        "mutual funds lend to banks",
+        f"Bank deposits and bonds held by Chilean mutual funds, by issuing bank, {_month(last)}, CLP billion",
+        source,
+        size=(9, 4.6),
+    ):
+        c.hbars(list(shown.index), list(shown.values), highlight=set(top6.index), sort=False)
+        c.fig.subplots_adjust(left=0.19, right=0.92, top=0.8, bottom=0.2)
+        c.save(figs, "banks")
+
+    # 2. The 2021-22 shift from banks to the Central Bank
+    bank_tn = comp.reindex(columns=["Bank deposits"], fill_value=0).sum(axis=1) / 1000
+    cb_tn = comp.reindex(columns=["Central Bank", "Treasury"], fill_value=0).sum(axis=1) / 1000
+    # the 2020-22 episode; on a short history (tests) fall back to the whole series
+    before, after = bank_tn.loc["2020-01":"2020-12"], bank_tn.loc["2021-01":"2022-12"]
+    hi = (before if len(before) else bank_tn).idxmax()
+    lo = (after if len(after) else bank_tn).idxmin()
+    for c in charts(
+        f"Funds cut bank deposits from CLP {bank_tn[hi]:.1f} to {bank_tn[lo]:.1f} trillion in 2020-22",
+        "Bank deposits vs Central Bank and Treasury paper held by Chilean mutual funds, CLP trillion",
+        source,
+    ):
+        c.event(pd.Timestamp("2020-07"), "1st pension withdrawal")
+        c.event(pd.Timestamp("2021-07"), "1st rate hike", y_frac=0.9)
+        c.line(x, bank_tn.values, 0, "Bank deposits")
+        c.line(x, cb_tn.values, 1, "Central Bank and Treasury")
+        c.note((pd.Timestamp(lo), bank_tn[lo]), f"{bank_tn[lo]:.1f} trillion, {_month(lo)}", (30, -20))
+        c.ax.set_ylim(bottom=0)
+        c.yaxis("CLP trillion")
+        c.legend("lower right")
+        c.save(figs, "funding-shift")
+
+    # 3. Composition
+    grouped = comp.T.groupby(lambda col: GROUPS.get(col, "Other")).sum().T
+    grouped = grouped[[g for g in dict.fromkeys(GROUPS.values()) if g in grouped]] / 1000
+    total = grouped.sum(axis=1)
+    for c in charts(
+        f"Fund holdings grew from CLP {total.iloc[0]:.1f} to {total.iloc[-1]:.1f} trillion, "
+        f"{grouped.iloc[-1].iloc[0] / total.iloc[-1]:.0%} of it lent to banks",
+        "Holdings of Chilean mutual funds by asset class, market value, CLP trillion",
+        source,
+    ):
+        c.stack(x, {k: grouped[k].values for k in grouped.columns})
+        c.yaxis("CLP trillion")  # every band is labelled at its end, so no separate legend box
+        c.fig.subplots_adjust(right=0.74)
+        c.save(figs, "composition")
+
+    # 4. Maturity: how short the money is
     risk = t["risk"].set_index("period").sort_index()
-    fg.lines(
-        risk[["avg_years_to_maturity"]],
-        figs,
-        "maturity",
-        "Average remaining maturity of domestic fixed income",
-        "Market-value weighted, years",
-        "years",
-    )
+    short = risk["share_maturing_1y"]
+    for c in charts(
+        f"{short.iloc[-1]:.0%} of funds' domestic fixed income matures within a year",
+        "Share of domestic fixed income (market value) with less than one year to maturity",
+        source,
+    ):
+        c.line(_x(short.index), short.values, 0, "maturing within a year", end_label=False)
+        k = short.idxmax()
+        c.note((pd.Timestamp(k), short.max()), f"{short.max():.0%}, {_month(k)}", (25, -25))
+        c.ax.set_ylim(0, 1)
+        c.yaxis(pct=True)
+        c.save(figs, "maturity")
+
+    # 5. FX hedging
     fx = t["fx_hedge"].set_index("period").sort_index().dropna(subset=["fx_assets_bn"])
-    fg.lines(
-        fx[["fx_assets_bn", "usd_sold_forward_bn"]].rename(
-            columns={"fx_assets_bn": "Foreign-currency assets", "usd_sold_forward_bn": "US$ sold forward (net)"}
-        )
-        / 1000,
-        figs,
-        "fx-hedge",
-        "Foreign-currency assets vs US$ sold forward",
-        f"All funds, CLP trillion, {fx.index[0]} to {fx.index[-1]}",
-        "CLP trillion",
-    )
-    eq = _wide(t["equities"], "ticker")
-    fg.bars(
-        eq.loc[last].nlargest(10),
-        figs,
-        "equities",
-        "Largest Chilean stocks held by mutual funds",
-        f"{last}, CLP billion",
-        "CLP billion",
-    )
+    xf = _x(fx.index)
+    assets, sold = fx["fx_assets_bn"] / 1000, fx["usd_sold_forward_bn"] / 1000
+    for c in charts(
+        f"Only {fx['hedge_ratio'].iloc[-1]:.0%} of CLP {assets.iloc[-1]:.1f} trillion in foreign-currency "
+        "assets is hedged",
+        "Foreign-currency assets of Chilean mutual funds vs US dollars sold forward (net), CLP trillion",
+        source.replace(repo, "Forwards with inconsistent amounts are excluded, so the hedge is a lower bound. " + repo),
+    ):
+        c.line(xf, assets.values, 0, "Foreign-currency assets")
+        c.line(xf, sold.values, 1, "US$ sold forward")
+        c.ax.set_ylim(bottom=0)
+        c.yaxis("CLP trillion")
+        c.legend("upper left")
+        c.save(figs, "fx-hedge")
+
+    # 6. Equities
+    eq = _wide(t["equities"], "ticker").loc[last].nlargest(10)
+    for c in charts(
+        f"{eq.index[0]} and {eq.index[1]} are the largest Chilean stocks held by mutual funds",
+        f"Chilean equities held by mutual funds, ten largest positions, {_month(last)}, CLP billion",
+        source,
+        size=(9, 4.6),
+    ):
+        c.hbars(list(eq.index), list(eq.values), highlight={eq.index[0], eq.index[1]})
+        c.fig.subplots_adjust(left=0.16, right=0.92, top=0.8, bottom=0.2)
+        c.save(figs, "equities")
 
 
 def build(out: Path = Path("data/processed"), figs: Path = Path("docs/figures"), readme: Path | None = None) -> dict:
     t = store.read_all(out)
     s = series(t)
     s.round(4).to_csv(Path(out) / "headline_series.csv")
+    outflows(t).to_csv(Path(out) / "outflows.csv", index=False)
     data = latest(s)
     (Path(out) / "latest.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     figures(t, figs)
