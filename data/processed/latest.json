@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "id": "mutual-funds-bank-funding",
+  "repo": "chile-mutual-funds-analytics",
+  "title": "Mutual funds as a source of bank funding",
+  "question": "How much short-term funding do Chilean banks get from mutual funds, and how concentrated is it?",
+  "as_of": "2026-09",
+  "frequency": "monthly",
+  "updated": "2026-10-21",
+  "source": "CMF mutual fund portfolio files (NACI, EXTR, FUTU)",
+  "headline": "Mutual funds held CLP 38.5 trillion of bank deposits and bonds in September 2026, 49% of everything they own; the six largest banks take 78%.",
+  "metrics": [
+    {
+      "id": "bank_funding_tn",
+      "label": "Bank deposits and bonds held by funds",
+      "value": 38.5077,
+      "unit": "CLP tn",
+      "period": "2026-09",
+      "previous": 38.788,
+      "change": -0.0072,
+      "change_type": "relative"
+    },
+    {
+      "id": "bank_share_of_holdings",
+      "label": "Share of fund holdings lent to banks",
+      "value": 0.4862,
+      "unit": "share",
+      "period": "2026-09",
+      "previous": 0.4909,
+      "change": -0.0047,
+      "change_type": "points"
+    },
+    {
+      "id": "top6_bank_share",
+      "label": "Share taken by the six largest banks",
+      "value": 0.7816,
+      "unit": "share",
+      "period": "2026-09",
+      "previous": 0.7859,
+      "change": -0.0043,
+      "change_type": "points"
+    },
+    {
+      "id": "share_maturing_1y",
+      "label": "Domestic fixed income maturing within a year",
+      "value": 0.5596,
+      "unit": "share",
+      "period": "2026-09",
+      "previous": 0.5715,
+      "change": -0.0119,
+      "change_type": "points"
+    },
+    {
+      "id": "avg_years_to_maturity",
+      "label": "Average remaining maturity, domestic fixed income",
+      "value": 1.891,
+      "unit": "years",
+      "period": "2026-09",
+      "previous": 1.7985,
+      "change": 0.0925,
+      "change_type": "absolute"
+    },
+    {
+      "id": "holdings_tn",
+      "label": "Total holdings (fund-of-fund units excluded)",
+      "value": 79.2043,
+      "unit": "CLP tn",
+      "period": "2026-09",
+      "previous": 79.0128,
+      "change": 0.0024,
+      "change_type": "relative"
+    },
+    {
+      "id": "fx_hedge_ratio",
+      "label": "Foreign-currency assets hedged with US$ forwards",
+      "value": 0.1181,
+      "unit": "share",
+      "period": "2026-09",
+      "previous": 0.1122,
+      "change": 0.0059,
+      "change_type": "points"
+    }
+  ],
+  "figure": "docs/figures/banks-light.png"
+}
