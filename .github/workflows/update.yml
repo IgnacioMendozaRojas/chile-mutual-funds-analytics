@@ -12,6 +12,10 @@ on:
         description: "Recompute every month from 2019-01 (about an hour)"
         type: boolean
         default: false
+      start:
+        description: "First month to consider, YYYY-MM (default 2019-01)"
+        type: string
+        default: "2019-01"
 
 permissions:
   contents: write
@@ -34,7 +38,7 @@ jobs:
       - name: Add new months
         id: update
         continue-on-error: true
-        run: ffmm update ${{ inputs.rebuild && '--rebuild' || '' }}
+        run: ffmm update --start "${{ inputs.start || '2019-01' }}" ${{ inputs.rebuild && '--rebuild' || '' }}
 
       - name: Rebuild figures, latest.json and README
         run: ffmm build
