@@ -1,4 +1,914 @@
 period,asset_class,clp_bn
+2019-01,Bank bonds,7260.7620
+2019-01,Bank deposits,14190.0438
+2019-01,Central Bank,2205.1258
+2019-01,Chilean equities,1863.9579
+2019-01,Commercial paper,352.4344
+2019-01,Corporate bonds,2759.9088
+2019-01,Foreign investments,2479.0639
+2019-01,Investment fund units,102.1263
+2019-01,Other,9.9832
+2019-01,Treasury,1698.2793
+2019-02,Bank bonds,7818.4099
+2019-02,Bank deposits,13296.7358
+2019-02,Central Bank,2616.2101
+2019-02,Chilean equities,1811.3708
+2019-02,Commercial paper,364.6773
+2019-02,Corporate bonds,2773.3870
+2019-02,Foreign investments,2500.4102
+2019-02,Investment fund units,101.4416
+2019-02,Other,10.6709
+2019-02,Treasury,1443.0382
+2019-03,Bank bonds,8203.1778
+2019-03,Bank deposits,13750.7092
+2019-03,Central Bank,2540.5085
+2019-03,Chilean equities,1720.0785
+2019-03,Commercial paper,330.3661
+2019-03,Corporate bonds,2912.6916
+2019-03,Foreign investments,2562.5285
+2019-03,Investment fund units,105.7427
+2019-03,Other,9.6357
+2019-03,Treasury,1643.8309
+2019-04,Bank bonds,8577.2238
+2019-04,Bank deposits,14556.1064
+2019-04,Central Bank,1887.5439
+2019-04,Chilean equities,1673.4154
+2019-04,Commercial paper,311.0664
+2019-04,Corporate bonds,2978.7765
+2019-04,Foreign investments,2706.9930
+2019-04,Investment fund units,107.3094
+2019-04,Other,10.4651
+2019-04,Treasury,1592.9652
+2019-05,Bank bonds,8954.2809
+2019-05,Bank deposits,15233.5253
+2019-05,Central Bank,2373.6356
+2019-05,Chilean equities,1522.3427
+2019-05,Commercial paper,316.4202
+2019-05,Corporate bonds,3205.7801
+2019-05,Foreign investments,2639.6874
+2019-05,Investment fund units,105.0670
+2019-05,Other,10.7430
+2019-05,Treasury,1906.8075
+2019-06,Bank bonds,9178.1186
+2019-06,Bank deposits,15523.0440
+2019-06,Central Bank,1797.4125
+2019-06,Chilean equities,1600.6398
+2019-06,Commercial paper,294.6570
+2019-06,Corporate bonds,3444.0931
+2019-06,Foreign investments,2624.4389
+2019-06,Investment fund units,103.6545
+2019-06,Other,13.0456
+2019-06,Treasury,2053.4754
+2019-07,Bank bonds,9365.2678
+2019-07,Bank deposits,16372.6197
+2019-07,Central Bank,2025.8377
+2019-07,Chilean equities,1584.8704
+2019-07,Commercial paper,306.7818
+2019-07,Corporate bonds,3647.8898
+2019-07,Foreign investments,2830.4588
+2019-07,Investment fund units,110.5561
+2019-07,Other,20.0852
+2019-07,Treasury,2255.8564
+2019-08,Bank bonds,9956.2016
+2019-08,Bank deposits,16677.0390
+2019-08,Central Bank,1506.8800
+2019-08,Chilean equities,1483.6604
+2019-08,Commercial paper,315.2981
+2019-08,Corporate bonds,3724.0828
+2019-08,Foreign investments,2728.8520
+2019-08,Investment fund units,107.1595
+2019-08,Other,9.2003
+2019-08,Treasury,2216.2886
+2019-09,Bank bonds,10016.2795
+2019-09,Bank deposits,17138.9467
+2019-09,Central Bank,991.0213
+2019-09,Chilean equities,1577.5359
+2019-09,Commercial paper,271.3140
+2019-09,Corporate bonds,3816.2433
+2019-09,Foreign investments,2792.9863
+2019-09,Investment fund units,106.9105
+2019-09,Other,9.2046
+2019-09,Treasury,2191.8140
+2019-10,Bank bonds,9129.4092
+2019-10,Bank deposits,17028.8898
+2019-10,Central Bank,1611.8680
+2019-10,Chilean equities,1387.9409
+2019-10,Commercial paper,282.0143
+2019-10,Corporate bonds,3727.4798
+2019-10,Foreign investments,2944.1305
+2019-10,Investment fund units,106.6018
+2019-10,Other,5.0865
+2019-10,Treasury,1875.9987
+2019-11,Bank bonds,7574.9410
+2019-11,Bank deposits,18339.8206
+2019-11,Central Bank,1104.3822
+2019-11,Chilean equities,1127.5296
+2019-11,Commercial paper,297.8347
+2019-11,Corporate bonds,3380.9560
+2019-11,Foreign investments,3515.9207
+2019-11,Investment fund units,93.5600
+2019-11,Other,5.1027
+2019-11,Treasury,1960.5333
+2019-12,Bank bonds,7421.5031
+2019-12,Bank deposits,17648.8905
+2019-12,Central Bank,873.9981
+2019-12,Chilean equities,1113.5008
+2019-12,Commercial paper,262.9162
+2019-12,Corporate bonds,3301.5576
+2019-12,Foreign investments,3588.1821
+2019-12,Investment fund units,127.7022
+2019-12,Other,6.6692
+2019-12,Treasury,1722.6855
+2020-01,Bank bonds,7673.6192
+2020-01,Bank deposits,17903.6807
+2020-01,Central Bank,1150.9393
+2020-01,Chilean equities,1028.9554
+2020-01,Commercial paper,301.8707
+2020-01,Corporate bonds,3424.9073
+2020-01,Foreign investments,3903.8926
+2020-01,Investment fund units,187.5228
+2020-01,Other,5.6862
+2020-01,Treasury,1759.5557
+2020-02,Bank bonds,7104.4799
+2020-02,Bank deposits,18106.3773
+2020-02,Central Bank,1806.0952
+2020-02,Chilean equities,908.1168
+2020-02,Commercial paper,274.3898
+2020-02,Corporate bonds,3329.9108
+2020-02,Foreign investments,3857.0783
+2020-02,Investment fund units,192.1975
+2020-02,Other,6.0465
+2020-02,Treasury,1185.5044
+2020-03,Bank bonds,5731.9526
+2020-03,Bank deposits,20424.6321
+2020-03,Central Bank,972.2928
+2020-03,Chilean equities,720.1357
+2020-03,Commercial paper,248.3151
+2020-03,Corporate bonds,2985.6545
+2020-03,Foreign investments,2923.7485
+2020-03,Investment fund units,172.8012
+2020-03,Other,6.2437
+2020-03,Treasury,1580.0734
+2020-04,Bank bonds,5950.1690
+2020-04,Bank deposits,20756.1547
+2020-04,Central Bank,2036.6979
+2020-04,Chilean equities,819.9210
+2020-04,Commercial paper,165.7951
+2020-04,Corporate bonds,2946.8995
+2020-04,Foreign investments,3231.1099
+2020-04,Investment fund units,175.7863
+2020-04,Other,4.8486
+2020-04,Treasury,1532.2341
+2020-05,Bank bonds,6222.5167
+2020-05,Bank deposits,20490.5996
+2020-05,Central Bank,3227.2574
+2020-05,Chilean equities,751.4480
+2020-05,Commercial paper,127.2498
+2020-05,Corporate bonds,2931.2423
+2020-05,Foreign investments,3134.2466
+2020-05,Investment fund units,187.1681
+2020-05,Other,1.0122
+2020-05,Treasury,2073.8282
+2020-06,Bank bonds,6382.2200
+2020-06,Bank deposits,19288.1811
+2020-06,Central Bank,4466.3607
+2020-06,Chilean equities,836.2783
+2020-06,Commercial paper,65.1324
+2020-06,Corporate bonds,3004.0346
+2020-06,Foreign investments,3551.2478
+2020-06,Investment fund units,212.4417
+2020-06,Other,1.8118
+2020-06,Treasury,2283.1872
+2020-07,Bank bonds,6175.3285
+2020-07,Bank deposits,16506.9546
+2020-07,Central Bank,7261.7971
+2020-07,Chilean equities,895.8127
+2020-07,Commercial paper,52.4005
+2020-07,Corporate bonds,3050.1061
+2020-07,Foreign investments,3666.3799
+2020-07,Investment fund units,221.2780
+2020-07,Other,1.0640
+2020-07,Treasury,2195.2908
+2020-08,Bank bonds,6530.3611
+2020-08,Bank deposits,14543.5864
+2020-08,Central Bank,8050.5194
+2020-08,Chilean equities,884.1909
+2020-08,Commercial paper,97.1998
+2020-08,Corporate bonds,3153.9497
+2020-08,Foreign investments,4133.8922
+2020-08,Investment fund units,220.6949
+2020-08,Other,2.8083
+2020-08,Treasury,2331.0847
+2020-09,Bank bonds,6420.4733
+2020-09,Bank deposits,12895.1518
+2020-09,Central Bank,9789.7671
+2020-09,Chilean equities,879.4839
+2020-09,Commercial paper,173.4428
+2020-09,Corporate bonds,3116.1189
+2020-09,Foreign investments,4003.5817
+2020-09,Investment fund units,268.8302
+2020-09,Other,2.0032
+2020-09,Treasury,2580.1488
+2020-10,Bank bonds,6610.9994
+2020-10,Bank deposits,12088.3533
+2020-10,Central Bank,10648.1346
+2020-10,Chilean equities,835.0707
+2020-10,Commercial paper,192.1216
+2020-10,Corporate bonds,3089.1242
+2020-10,Foreign investments,4131.4784
+2020-10,Investment fund units,298.6525
+2020-10,Other,2.3103
+2020-10,Treasury,2882.9888
+2020-11,Bank bonds,6948.3933
+2020-11,Bank deposits,11711.5760
+2020-11,Central Bank,9982.3564
+2020-11,Chilean equities,934.7157
+2020-11,Commercial paper,176.6628
+2020-11,Corporate bonds,3243.1526
+2020-11,Foreign investments,4624.2440
+2020-11,Investment fund units,340.5599
+2020-11,Other,3.2573
+2020-11,Treasury,2563.8334
+2020-12,Bank bonds,7056.1841
+2020-12,Bank deposits,13357.8624
+2020-12,Central Bank,7379.5906
+2020-12,Chilean equities,968.1668
+2020-12,Commercial paper,182.2607
+2020-12,Corporate bonds,3289.7404
+2020-12,Foreign investments,4618.9895
+2020-12,Investment fund units,422.1287
+2020-12,Other,6.3949
+2020-12,Treasury,2842.6548
+2021-01,Bank bonds,7507.9825
+2021-01,Bank deposits,13128.2010
+2021-01,Central Bank,6559.9253
+2021-01,Chilean equities,1017.9350
+2021-01,Commercial paper,186.8325
+2021-01,Corporate bonds,3477.5385
+2021-01,Foreign investments,4831.2195
+2021-01,Investment fund units,471.7347
+2021-01,Other,4.3824
+2021-01,Treasury,3172.3343
+2021-02,Bank bonds,7581.2117
+2021-02,Bank deposits,12460.1500
+2021-02,Central Bank,7849.6664
+2021-02,Chilean equities,1152.3228
+2021-02,Commercial paper,211.1664
+2021-02,Corporate bonds,3597.1373
+2021-02,Foreign investments,4901.2731
+2021-02,Investment fund units,471.8912
+2021-02,Other,4.0846
+2021-02,Treasury,3212.3731
+2021-03,Bank bonds,7959.8674
+2021-03,Bank deposits,12389.0509
+2021-03,Central Bank,7975.5358
+2021-03,Chilean equities,1301.7256
+2021-03,Commercial paper,206.5314
+2021-03,Corporate bonds,3535.2433
+2021-03,Foreign investments,4968.5334
+2021-03,Investment fund units,518.1580
+2021-03,Other,4.8133
+2021-03,Treasury,3094.9344
+2021-04,Bank bonds,7723.2282
+2021-04,Bank deposits,12696.1993
+2021-04,Central Bank,6222.3111
+2021-04,Chilean equities,1202.7492
+2021-04,Commercial paper,192.1562
+2021-04,Corporate bonds,3634.8782
+2021-04,Foreign investments,5187.7533
+2021-04,Investment fund units,558.6028
+2021-04,Other,2.4939
+2021-04,Treasury,2988.9447
+2021-05,Bank bonds,7539.6557
+2021-05,Bank deposits,13219.4231
+2021-05,Central Bank,6680.2302
+2021-05,Chilean equities,1163.9749
+2021-05,Commercial paper,212.0366
+2021-05,Corporate bonds,3723.8881
+2021-05,Foreign investments,5394.0335
+2021-05,Investment fund units,590.9181
+2021-05,Other,2.2592
+2021-05,Treasury,2697.4876
+2021-06,Bank bonds,7063.2480
+2021-06,Bank deposits,11676.9416
+2021-06,Central Bank,8106.6226
+2021-06,Chilean equities,1137.0003
+2021-06,Commercial paper,214.6834
+2021-06,Corporate bonds,3532.8087
+2021-06,Foreign investments,5776.9717
+2021-06,Investment fund units,671.5183
+2021-06,Other,2.6346
+2021-06,Treasury,1921.0020
+2021-07,Bank bonds,6542.0768
+2021-07,Bank deposits,10810.9545
+2021-07,Central Bank,8800.3296
+2021-07,Chilean equities,1133.6058
+2021-07,Commercial paper,191.1338
+2021-07,Corporate bonds,3398.7126
+2021-07,Foreign investments,6358.2193
+2021-07,Investment fund units,731.9914
+2021-07,Other,2.7440
+2021-07,Treasury,1645.0225
+2021-08,Bank bonds,6536.2434
+2021-08,Bank deposits,9743.3206
+2021-08,Central Bank,10150.0664
+2021-08,Chilean equities,1216.3365
+2021-08,Commercial paper,131.8630
+2021-08,Corporate bonds,3369.7313
+2021-08,Foreign investments,6984.2083
+2021-08,Investment fund units,771.5651
+2021-08,Other,4.4556
+2021-08,Treasury,1439.2080
+2021-09,Bank bonds,6101.8177
+2021-09,Bank deposits,8464.1233
+2021-09,Central Bank,12190.8754
+2021-09,Chilean equities,1161.6269
+2021-09,Commercial paper,148.0670
+2021-09,Corporate bonds,3172.7478
+2021-09,Foreign investments,7224.7008
+2021-09,Investment fund units,800.5601
+2021-09,Other,2.7190
+2021-09,Treasury,1286.7369
+2021-10,Bank bonds,5508.4535
+2021-10,Bank deposits,6333.2077
+2021-10,Central Bank,12368.4327
+2021-10,Chilean equities,1035.1570
+2021-10,Commercial paper,139.8673
+2021-10,Corporate bonds,2897.9253
+2021-10,Foreign investments,7483.9363
+2021-10,Investment fund units,802.9862
+2021-10,Other,2.9562
+2021-10,Treasury,955.7500
+2021-11,Bank bonds,5535.6317
+2021-11,Bank deposits,5383.8727
+2021-11,Central Bank,13411.5642
+2021-11,Chilean equities,1088.4173
+2021-11,Commercial paper,150.1020
+2021-11,Corporate bonds,2915.9622
+2021-11,Foreign investments,7778.8028
+2021-11,Investment fund units,829.2925
+2021-11,Other,2.6488
+2021-11,Treasury,958.4225
+2021-12,Bank bonds,5442.2470
+2021-12,Bank deposits,5902.7830
+2021-12,Central Bank,13248.5832
+2021-12,Chilean equities,1075.9494
+2021-12,Commercial paper,198.8954
+2021-12,Corporate bonds,2924.4646
+2021-12,Foreign investments,7910.6403
+2021-12,Investment fund units,869.1721
+2021-12,Other,3.3948
+2021-12,Treasury,806.2252
+2022-01,Bank bonds,5462.8223
+2022-01,Bank deposits,4897.6440
+2022-01,Central Bank,13406.8845
+2022-01,Chilean equities,1120.1609
+2022-01,Commercial paper,171.2756
+2022-01,Corporate bonds,2909.0371
+2022-01,Foreign investments,6996.3066
+2022-01,Investment fund units,882.8273
+2022-01,Other,3.8042
+2022-01,Treasury,744.7930
+2022-02,Bank bonds,5421.3816
+2022-02,Bank deposits,4571.1723
+2022-02,Central Bank,13225.2434
+2022-02,Chilean equities,1091.3663
+2022-02,Commercial paper,176.9081
+2022-02,Corporate bonds,2946.3785
+2022-02,Foreign investments,6425.2241
+2022-02,Investment fund units,844.8845
+2022-02,Other,5.7879
+2022-02,Treasury,781.5194
+2022-03,Bank bonds,5488.7366
+2022-03,Bank deposits,5057.4576
+2022-03,Central Bank,12481.7512
+2022-03,Chilean equities,1122.8480
+2022-03,Commercial paper,120.4910
+2022-03,Corporate bonds,3013.0143
+2022-03,Foreign investments,5930.1791
+2022-03,Investment fund units,805.8996
+2022-03,Other,6.3854
+2022-03,Treasury,1024.1310
+2022-04,Bank bonds,5760.6493
+2022-04,Bank deposits,4953.3413
+2022-04,Central Bank,13485.3833
+2022-04,Chilean equities,1044.3647
+2022-04,Commercial paper,253.1495
+2022-04,Corporate bonds,3184.9617
+2022-04,Foreign investments,5721.3013
+2022-04,Investment fund units,788.0655
+2022-04,Other,7.4306
+2022-04,Treasury,1009.1570
+2022-05,Bank bonds,5830.5534
+2022-05,Bank deposits,5704.5248
+2022-05,Central Bank,13302.1657
+2022-05,Chilean equities,1058.9353
+2022-05,Commercial paper,242.5969
+2022-05,Corporate bonds,3308.8772
+2022-05,Foreign investments,5314.4876
+2022-05,Investment fund units,772.1217
+2022-05,Other,6.4083
+2022-05,Treasury,1046.0539
+2022-06,Bank bonds,6001.4576
+2022-06,Bank deposits,6545.2861
+2022-06,Central Bank,12799.3789
+2022-06,Chilean equities,953.8621
+2022-06,Commercial paper,264.8772
+2022-06,Corporate bonds,3451.1447
+2022-06,Foreign investments,5163.1800
+2022-06,Investment fund units,783.6668
+2022-06,Other,9.3456
+2022-06,Treasury,1168.8295
+2022-07,Bank bonds,6279.9348
+2022-07,Bank deposits,7206.7576
+2022-07,Central Bank,12757.7376
+2022-07,Chilean equities,998.1948
+2022-07,Commercial paper,262.4077
+2022-07,Corporate bonds,3583.4463
+2022-07,Foreign investments,4912.4652
+2022-07,Investment fund units,774.2009
+2022-07,Other,6.6808
+2022-07,Treasury,1318.1109
+2022-08,Bank bonds,6040.6329
+2022-08,Bank deposits,8876.3545
+2022-08,Central Bank,12103.6362
+2022-08,Chilean equities,1069.6811
+2022-08,Commercial paper,235.7051
+2022-08,Corporate bonds,3540.5561
+2022-08,Foreign investments,4621.8891
+2022-08,Investment fund units,749.5618
+2022-08,Other,5.9356
+2022-08,Treasury,1288.7278
+2022-09,Bank bonds,5700.7362
+2022-09,Bank deposits,7987.7969
+2022-09,Central Bank,12276.5121
+2022-09,Chilean equities,1026.1652
+2022-09,Commercial paper,230.8635
+2022-09,Corporate bonds,3449.9274
+2022-09,Foreign investments,4334.7216
+2022-09,Investment fund units,729.9055
+2022-09,Other,5.1510
+2022-09,Treasury,1454.1969
+2022-10,Bank bonds,5430.9419
+2022-10,Bank deposits,8324.6253
+2022-10,Central Bank,11821.4306
+2022-10,Chilean equities,1045.2674
+2022-10,Commercial paper,297.3743
+2022-10,Corporate bonds,3423.6127
+2022-10,Foreign investments,4211.3426
+2022-10,Investment fund units,706.4749
+2022-10,Other,6.8563
+2022-10,Treasury,1343.4351
+2022-11,Bank bonds,5579.2980
+2022-11,Bank deposits,9202.2293
+2022-11,Central Bank,11215.0329
+2022-11,Chilean equities,1045.1831
+2022-11,Commercial paper,279.8133
+2022-11,Corporate bonds,3529.9641
+2022-11,Foreign investments,4156.3138
+2022-11,Investment fund units,708.7790
+2022-11,Other,3.4814
+2022-11,Treasury,1504.6728
+2022-12,Bank bonds,5568.6945
+2022-12,Bank deposits,9762.2701
+2022-12,Central Bank,10103.4374
+2022-12,Chilean equities,1015.2728
+2022-12,Commercial paper,315.8446
+2022-12,Corporate bonds,3523.6077
+2022-12,Foreign investments,3811.1545
+2022-12,Investment fund units,674.5168
+2022-12,Other,5.0395
+2022-12,Treasury,1735.8426
+2023-01,Bank bonds,5914.0058
+2023-01,Bank deposits,10111.2535
+2023-01,Central Bank,9247.2223
+2023-01,Chilean equities,1003.5155
+2023-01,Commercial paper,310.3841
+2023-01,Corporate bonds,3579.6359
+2023-01,Foreign investments,3789.3847
+2023-01,Investment fund units,651.5592
+2023-01,Other,2.0875
+2023-01,Treasury,1637.3727
+2023-02,Bank bonds,5980.8381
+2023-02,Bank deposits,9784.4998
+2023-02,Central Bank,10083.3705
+2023-02,Chilean equities,992.1392
+2023-02,Commercial paper,295.0640
+2023-02,Corporate bonds,3605.3742
+2023-02,Foreign investments,3786.3323
+2023-02,Investment fund units,630.3119
+2023-02,Other,4.2000
+2023-02,Treasury,1598.9274
+2023-03,Bank bonds,6021.5607
+2023-03,Bank deposits,10026.2119
+2023-03,Central Bank,10636.2124
+2023-03,Chilean equities,992.9726
+2023-03,Commercial paper,331.2390
+2023-03,Corporate bonds,3668.1422
+2023-03,Foreign investments,3558.0250
+2023-03,Investment fund units,582.8222
+2023-03,Other,3.1954
+2023-03,Treasury,1425.9198
+2023-04,Bank bonds,6134.7852
+2023-04,Bank deposits,10072.9685
+2023-04,Central Bank,10650.5633
+2023-04,Chilean equities,996.8896
+2023-04,Commercial paper,362.0605
+2023-04,Corporate bonds,3638.1937
+2023-04,Foreign investments,3521.2215
+2023-04,Investment fund units,561.1181
+2023-04,Other,1.8642
+2023-04,Treasury,1404.0273
+2023-05,Bank bonds,5856.7739
+2023-05,Bank deposits,10187.1318
+2023-05,Central Bank,12756.6529
+2023-05,Chilean equities,973.2649
+2023-05,Commercial paper,386.9757
+2023-05,Corporate bonds,3559.2244
+2023-05,Foreign investments,3461.4645
+2023-05,Investment fund units,549.3170
+2023-05,Other,1.8955
+2023-05,Treasury,1456.7214
+2023-06,Bank bonds,6388.6921
+2023-06,Bank deposits,10568.8774
+2023-06,Central Bank,12082.0311
+2023-06,Chilean equities,1073.1891
+2023-06,Commercial paper,383.6931
+2023-06,Corporate bonds,3585.4886
+2023-06,Foreign investments,3498.7108
+2023-06,Investment fund units,559.9621
+2023-06,Other,1.7641
+2023-06,Treasury,1752.0465
+2023-07,Bank bonds,6749.4277
+2023-07,Bank deposits,10398.1000
+2023-07,Central Bank,13530.9634
+2023-07,Chilean equities,1191.6260
+2023-07,Commercial paper,333.1033
+2023-07,Corporate bonds,3611.0351
+2023-07,Foreign investments,3698.9723
+2023-07,Investment fund units,599.1151
+2023-07,Other,1.7488
+2023-07,Treasury,1803.7263
+2023-08,Bank bonds,7186.0728
+2023-08,Bank deposits,10432.6572
+2023-08,Central Bank,14731.0051
+2023-08,Chilean equities,1150.8433
+2023-08,Commercial paper,357.4561
+2023-08,Corporate bonds,3622.1636
+2023-08,Foreign investments,3590.4157
+2023-08,Investment fund units,605.8501
+2023-08,Other,5.1316
+2023-08,Treasury,1599.1942
+2023-09,Bank bonds,7250.7662
+2023-09,Bank deposits,10124.8234
+2023-09,Central Bank,16318.0927
+2023-09,Chilean equities,1097.9394
+2023-09,Commercial paper,342.0019
+2023-09,Corporate bonds,3577.6519
+2023-09,Foreign investments,3563.9812
+2023-09,Investment fund units,639.3500
+2023-09,Other,1.6121
+2023-09,Treasury,1477.5863
+2023-10,Bank bonds,7126.8891
+2023-10,Bank deposits,10699.5854
+2023-10,Central Bank,17158.4961
+2023-10,Chilean equities,1027.1973
+2023-10,Commercial paper,338.6351
+2023-10,Corporate bonds,3365.1191
+2023-10,Foreign investments,3385.9694
+2023-10,Investment fund units,616.3062
+2023-10,Other,1.5925
+2023-10,Treasury,1386.0308
+2023-11,Bank bonds,7490.9591
+2023-11,Bank deposits,10299.9308
+2023-11,Central Bank,16533.1437
+2023-11,Chilean equities,1083.3831
+2023-11,Commercial paper,355.9485
+2023-11,Corporate bonds,3456.7478
+2023-11,Foreign investments,3571.8771
+2023-11,Investment fund units,615.2129
+2023-11,Other,1.6906
+2023-11,Treasury,1527.4113
+2023-12,Bank bonds,8196.0141
+2023-12,Bank deposits,10775.5797
+2023-12,Central Bank,15995.5254
+2023-12,Chilean equities,1155.3590
+2023-12,Commercial paper,367.8182
+2023-12,Corporate bonds,3488.0645
+2023-12,Foreign investments,3805.3106
+2023-12,Investment fund units,623.5763
+2023-12,Other,1.6825
+2023-12,Treasury,1836.5013
+2024-01,Bank bonds,8805.5045
+2024-01,Bank deposits,10558.4943
+2024-01,Central Bank,18004.1912
+2024-01,Chilean equities,1141.8544
+2024-01,Commercial paper,286.1790
+2024-01,Corporate bonds,3518.2631
+2024-01,Foreign investments,4087.0684
+2024-01,Investment fund units,609.2769
+2024-01,Other,0.3611
+2024-01,Treasury,1913.2774
+2024-02,Bank bonds,9411.1797
+2024-02,Bank deposits,11512.9541
+2024-02,Central Bank,17650.3953
+2024-02,Chilean equities,1270.2605
+2024-02,Commercial paper,335.2538
+2024-02,Corporate bonds,3537.9765
+2024-02,Foreign investments,4561.8107
+2024-02,Investment fund units,589.3110
+2024-02,Other,0.3632
+2024-02,Treasury,2022.3935
+2024-03,Bank bonds,10229.6174
+2024-03,Bank deposits,11866.9577
+2024-03,Central Bank,16791.5776
+2024-03,Chilean equities,1368.1876
+2024-03,Commercial paper,372.1248
+2024-03,Corporate bonds,3502.3250
+2024-03,Foreign investments,4859.7913
+2024-03,Investment fund units,589.6212
+2024-03,Other,0.3291
+2024-03,Treasury,2508.5105
+2024-04,Bank bonds,10573.9413
+2024-04,Bank deposits,13017.0272
+2024-04,Central Bank,16540.4021
+2024-04,Chilean equities,1391.6167
+2024-04,Commercial paper,415.9612
+2024-04,Corporate bonds,3604.4758
+2024-04,Foreign investments,4619.5014
+2024-04,Investment fund units,549.2303
+2024-04,Other,0.3367
+2024-04,Treasury,2543.4316
+2024-05,Bank bonds,11027.3380
+2024-05,Bank deposits,13553.5236
+2024-05,Central Bank,16621.9127
+2024-05,Chilean equities,1406.6182
+2024-05,Commercial paper,472.4690
+2024-05,Corporate bonds,3687.1312
+2024-05,Foreign investments,4588.3671
+2024-05,Investment fund units,531.7790
+2024-05,Other,0.3400
+2024-05,Treasury,2896.8490
+2024-06,Bank bonds,11081.9880
+2024-06,Bank deposits,14919.2221
+2024-06,Central Bank,14653.4440
+2024-06,Chilean equities,1447.4918
+2024-06,Commercial paper,527.4926
+2024-06,Corporate bonds,3763.0258
+2024-06,Foreign investments,4896.9515
+2024-06,Investment fund units,544.8692
+2024-06,Other,0.3046
+2024-06,Treasury,3579.8555
+2024-07,Bank bonds,11507.1154
+2024-07,Bank deposits,16944.4103
+2024-07,Central Bank,14123.0974
+2024-07,Chilean equities,1492.3960
+2024-07,Commercial paper,541.9661
+2024-07,Corporate bonds,4001.0454
+2024-07,Foreign investments,5015.1921
+2024-07,Investment fund units,530.3054
+2024-07,Other,0.3081
+2024-07,Treasury,3032.9188
+2024-08,Bank bonds,12398.3902
+2024-08,Bank deposits,18145.0810
+2024-08,Central Bank,12117.4618
+2024-08,Chilean equities,1496.7095
+2024-08,Commercial paper,582.6023
+2024-08,Corporate bonds,4464.8283
+2024-08,Foreign investments,4952.7510
+2024-08,Investment fund units,554.8680
+2024-08,Other,0.3132
+2024-08,Treasury,3653.5913
+2024-09,Bank bonds,13198.8570
+2024-09,Bank deposits,18080.2853
+2024-09,Central Bank,12609.0016
+2024-09,Chilean equities,1508.0384
+2024-09,Commercial paper,632.0209
+2024-09,Corporate bonds,4613.8681
+2024-09,Foreign investments,5033.1974
+2024-09,Investment fund units,555.5692
+2024-09,Other,0.2738
+2024-09,Treasury,3729.2629
+2024-10,Bank bonds,13185.9713
+2024-10,Bank deposits,19164.2584
+2024-10,Central Bank,12428.0166
+2024-10,Chilean equities,1561.5041
+2024-10,Commercial paper,626.1115
+2024-10,Corporate bonds,4724.3298
+2024-10,Foreign investments,5414.0739
+2024-10,Investment fund units,578.4311
+2024-10,Other,0.2685
+2024-10,Treasury,2955.0615
+2024-11,Bank bonds,13607.8179
+2024-11,Bank deposits,18354.0561
+2024-11,Central Bank,13540.2864
+2024-11,Chilean equities,1569.3909
+2024-11,Commercial paper,688.2731
+2024-11,Corporate bonds,4980.6988
+2024-11,Foreign investments,5700.1291
+2024-11,Investment fund units,609.4024
+2024-11,Other,0.2715
+2024-11,Treasury,3165.1912
+2024-12,Bank bonds,13372.6641
+2024-12,Bank deposits,18624.9281
+2024-12,Central Bank,12526.5703
+2024-12,Chilean equities,1610.5984
+2024-12,Commercial paper,719.1019
+2024-12,Corporate bonds,5073.3910
+2024-12,Foreign investments,5863.9021
+2024-12,Investment fund units,632.5891
+2024-12,Other,0.2458
+2024-12,Treasury,3238.7909
+2025-01,Bank bonds,14338.0481
+2025-01,Bank deposits,18773.3277
+2025-01,Central Bank,11894.3988
+2025-01,Chilean equities,1772.9574
+2025-01,Commercial paper,736.5055
+2025-01,Corporate bonds,5104.8870
+2025-01,Foreign investments,6057.4371
+2025-01,Investment fund units,649.1505
+2025-01,Other,0.2451
+2025-01,Treasury,3157.3220
+2025-02,Bank bonds,14910.0077
+2025-02,Bank deposits,18428.7114
+2025-02,Central Bank,11613.1281
+2025-02,Chilean equities,1886.1469
+2025-02,Commercial paper,712.5934
+2025-02,Corporate bonds,5159.5474
+2025-02,Foreign investments,5881.2430
+2025-02,Investment fund units,645.4081
+2025-02,Other,0.2481
+2025-02,Treasury,3732.9010
+2025-03,Bank bonds,15384.3444
+2025-03,Bank deposits,18274.8482
+2025-03,Central Bank,11749.8935
+2025-03,Chilean equities,2005.7531
+2025-03,Commercial paper,810.8464
+2025-03,Corporate bonds,5220.0854
+2025-03,Foreign investments,5572.2130
+2025-03,Investment fund units,645.2145
+2025-03,Other,0.2216
+2025-03,Treasury,3890.2350
+2025-04,Bank bonds,15851.7326
+2025-04,Bank deposits,18667.0605
+2025-04,Central Bank,11010.7349
+2025-04,Chilean equities,2094.9256
+2025-04,Commercial paper,921.3103
+2025-04,Corporate bonds,5027.9271
+2025-04,Foreign investments,5369.6895
+2025-04,Investment fund units,640.4584
+2025-04,Other,0.2238
+2025-04,Treasury,3816.0727
+2025-05,Bank bonds,16105.4138
+2025-05,Bank deposits,19360.9714
+2025-05,Central Bank,11608.3917
+2025-05,Chilean equities,2179.6671
+2025-05,Commercial paper,964.1830
+2025-05,Corporate bonds,5042.7025
+2025-05,Foreign investments,5605.9234
+2025-05,Investment fund units,638.9909
+2025-05,Other,0.2024
+2025-05,Treasury,4207.7010
+2025-06,Bank bonds,16105.2714
+2025-06,Bank deposits,19272.2761
+2025-06,Central Bank,12338.3747
+2025-06,Chilean equities,2226.1388
+2025-06,Commercial paper,1040.9304
+2025-06,Corporate bonds,5005.3830
+2025-06,Foreign investments,5847.3213
+2025-06,Investment fund units,657.6045
+2025-06,Other,0.1789
+2025-06,Treasury,4703.6908
+2025-07,Bank bonds,16255.7276
+2025-07,Bank deposits,18132.1130
+2025-07,Central Bank,12555.7854
+2025-07,Chilean equities,2200.9663
+2025-07,Commercial paper,988.5625
+2025-07,Corporate bonds,5102.7881
+2025-07,Foreign investments,6433.8825
+2025-07,Investment fund units,695.5619
+2025-07,Other,0.1799
+2025-07,Treasury,4196.1800
+2025-08,Bank bonds,16509.0043
+2025-08,Bank deposits,17276.3667
+2025-08,Central Bank,13662.4635
+2025-08,Chilean equities,2430.8471
+2025-08,Commercial paper,970.7800
+2025-08,Corporate bonds,5460.5472
+2025-08,Foreign investments,6630.8450
+2025-08,Investment fund units,722.1484
+2025-08,Other,0.1812
+2025-08,Treasury,4871.2116
+2025-09,Bank bonds,16760.7911
+2025-09,Bank deposits,16171.0616
+2025-09,Central Bank,14147.2379
+2025-09,Chilean equities,2679.1362
+2025-09,Commercial paper,955.8479
+2025-09,Corporate bonds,5617.0348
+2025-09,Foreign investments,7113.4699
+2025-09,Investment fund units,723.9405
+2025-09,Other,0.1447
+2025-09,Treasury,5040.0229
+2025-10,Bank bonds,16702.6866
+2025-10,Bank deposits,16162.0324
+2025-10,Central Bank,13307.0192
+2025-10,Chilean equities,2979.1792
+2025-10,Commercial paper,982.9604
+2025-10,Corporate bonds,5867.5054
+2025-10,Foreign investments,7508.8512
+2025-10,Investment fund units,739.7463
+2025-10,Other,0.1448
+2025-10,Treasury,5136.3174
+2025-11,Bank bonds,17147.4378
+2025-11,Bank deposits,16148.8457
+2025-11,Central Bank,12528.2522
+2025-11,Chilean equities,3352.8277
+2025-11,Commercial paper,989.9701
+2025-11,Corporate bonds,6075.0728
+2025-11,Foreign investments,7469.1915
+2025-11,Investment fund units,759.7359
+2025-11,Other,0.1456
+2025-11,Treasury,5072.1374
+2025-12,Bank bonds,17156.3671
+2025-12,Bank deposits,17024.0962
+2025-12,Central Bank,11412.5513
+2025-12,Chilean equities,3696.8186
+2025-12,Commercial paper,1128.3775
+2025-12,Corporate bonds,6040.7850
+2025-12,Foreign investments,7434.9882
+2025-12,Investment fund units,770.1006
+2025-12,Other,0.1213
+2025-12,Treasury,4400.4157
+2026-01,Bank bonds,17949.7514
+2026-01,Bank deposits,17792.4843
+2026-01,Central Bank,10474.2542
+2026-01,Chilean equities,4398.0702
+2026-01,Commercial paper,1116.1845
+2026-01,Corporate bonds,6052.5379
+2026-01,Foreign investments,7393.4068
+2026-01,Investment fund units,818.2999
+2026-01,Other,1.4818
+2026-01,Treasury,4212.0995
+2026-02,Bank bonds,18496.8279
+2026-02,Bank deposits,17462.3024
+2026-02,Central Bank,10911.9830
+2026-02,Chilean equities,4276.4896
+2026-02,Commercial paper,1110.8534
+2026-02,Corporate bonds,6152.2441
+2026-02,Foreign investments,7689.2979
+2026-02,Investment fund units,835.3887
+2026-02,Other,26.3317
+2026-02,Treasury,4510.2082
+2026-03,Bank bonds,18427.9547
+2026-03,Bank deposits,18213.9898
+2026-03,Central Bank,12610.8558
+2026-03,Chilean equities,3966.8063
+2026-03,Commercial paper,1064.4379
+2026-03,Corporate bonds,6344.2190
+2026-03,Foreign investments,7578.6535
+2026-03,Investment fund units,855.1143
+2026-03,Other,22.4118
+2026-03,Treasury,4341.0627
+2026-04,Bank bonds,18911.3859
+2026-04,Bank deposits,18522.3955
+2026-04,Central Bank,11406.9112
+2026-04,Chilean equities,4007.2099
+2026-04,Commercial paper,1084.7975
+2026-04,Corporate bonds,6644.9095
+2026-04,Foreign investments,8145.7443
+2026-04,Investment fund units,854.2125
+2026-04,Other,16.3081
+2026-04,Treasury,4716.9494
+2026-05,Bank bonds,19169.3129
+2026-05,Bank deposits,18592.5185
+2026-05,Central Bank,11730.3209
+2026-05,Chilean equities,4099.3661
+2026-05,Commercial paper,1050.5112
+2026-05,Corporate bonds,6779.5033
+2026-05,Foreign investments,8595.8103
+2026-05,Investment fund units,857.7072
+2026-05,Other,1.1930
+2026-05,Treasury,4765.9762
+2026-06,Bank bonds,18469.1386
+2026-06,Bank deposits,19796.9949
+2026-06,Central Bank,11622.9976
+2026-06,Chilean equities,4166.1609
+2026-06,Commercial paper,1060.5329
+2026-06,Corporate bonds,6759.0760
+2026-06,Foreign investments,9176.5419
+2026-06,Investment fund units,885.0451
+2026-06,Other,1.1986
+2026-06,Treasury,5022.3556
+2026-07,Bank bonds,18212.8352
+2026-07,Bank deposits,20004.2311
+2026-07,Central Bank,11126.9569
+2026-07,Chilean equities,4300.9041
+2026-07,Commercial paper,1016.1703
+2026-07,Corporate bonds,6925.2622
+2026-07,Foreign investments,9184.8744
+2026-07,Investment fund units,911.6804
+2026-07,Other,17.1072
+2026-07,Treasury,5054.9158
 2026-08,Bank bonds,18435.0350
 2026-08,Bank deposits,20352.9587
 2026-08,Central Bank,12268.1926
