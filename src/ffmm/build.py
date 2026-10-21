@@ -74,7 +74,9 @@ def outflows(t: dict[str, pd.DataFrame], horizons=(1, 3, 12)) -> pd.DataFrame:
     rows = []
     for name, x in [("Bank deposits", comp["Bank deposits"]), ("Bank deposits and bonds", comp.sum(axis=1))]:
         for k in horizons:
-            change = x / x.shift(k) - 1
+            change = (x / x.shift(k) - 1).dropna()
+            if change.empty:  # history shorter than the horizon
+                continue
             rows.append(
                 {"funding": name, "months": k, "worst_change": round(change.min(), 4), "ending": change.idxmin()}
             )
