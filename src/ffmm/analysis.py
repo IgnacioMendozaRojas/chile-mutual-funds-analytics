@@ -60,7 +60,7 @@ def risk_profile(naci: pd.DataFrame) -> pd.DataFrame:
     fi["ccy"] = fi["currency"].map({"$$": "CLP", "UF": "UF", "PROM": "USD", "EUR": "EUR"}).fillna("Other")
     ccy = _pivot(fi, "ccy")
     ccy = ccy.div(ccy.sum(axis=1), axis=0).add_prefix("currency_")
-    fi["rating_bucket"] = fi["rating"].map(RATING_BUCKET).fillna("Not rated / other")
+    fi["rating_bucket"] = fi["risk_rating"].map(RATING_BUCKET).fillna("Not rated / other")
     fi.loc[fi["asset_class"].isin({"Central Bank", "Treasury"}), "rating_bucket"] = "Sovereign"
     rat = _pivot(fi, "rating_bucket")
     rat = rat.div(rat.sum(axis=1), axis=0).add_prefix("rating_")
@@ -71,7 +71,7 @@ def risk_profile(naci: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([wam.rename("avg_years_to_maturity"), short.rename("share_maturing_1y"), ccy, rat], axis=1)
 
 
-def clean_usd_forwards(futu: pd.DataFrame) -> pd.DataFrame:
+def clean_usd_forwards(futu: pd.DataFrame, keep_dropped: bool = False) -> pd.DataFrame:
     """USD forwards with the committed amount checked against notional x strike.
 
     The committed amount should equal notional (US$) x strike (CLP per US$), in
@@ -80,14 +80,16 @@ def clean_usd_forwards(futu: pd.DataFrame) -> pd.DataFrame:
     a notional reported in pesos) cannot be repaired and are dropped. The `status`
     column records which case each row fell into.
     """
-    fwd = futu[futu["underlying"].isin(USD_CODES) & futu["derivative_type"].str.contains("FORWARD", na=False)].copy()
+    fwd = futu[
+        futu["underlying_currency"].isin(USD_CODES) & futu["derivative_type"].str.contains("FORWARD", na=False)
+    ].copy()
     implied = fwd["committed_amount"] * 1000 / fwd["notional"]
-    ratio = implied / fwd["strike"]
+    ratio = implied / fwd["strike_price"]
     ok = ratio.between(0.8, 1.25)
     units = (ratio / 1000).between(0.8, 1.25)
     fwd["status"] = np.select([ok, units], ["ok", "rescaled from CLP units"], "dropped: inconsistent")
     fwd["committed_clp_th"] = np.where(ok, fwd["committed_amount"], fwd["committed_amount"] / 1000)
-    return fwd[fwd["status"] != "dropped: inconsistent"]
+    return fwd if keep_dropped else fwd[fwd["status"] != "dropped: inconsistent"]
 
 
 def fx_hedge(naci: pd.DataFrame, extr: pd.DataFrame, futu: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:

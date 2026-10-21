@@ -4,19 +4,28 @@ build-backend = "hatchling.build"
 
 [project]
 name = "chile-mutual-funds-analytics"
-version = "0.1.0"
+version = "0.2.0"
 description = "What Chilean mutual funds hold, month by month, from the CMF portfolio files"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 authors = [{ name = "Ignacio Mendoza Rojas" }]
-dependencies = ["pandas>=2.1", "numpy>=1.26", "matplotlib>=3.8", "requests>=2.31"]
+dependencies = [
+  # CMF client, quality checks and typed columns, pinned to an exact commit
+  "cmf-ffmm-etl @ git+https://github.com/IgnacioMendozaRojas/cmf-ffmm-etl@68deb545ee499808a1c6b7f83be16dc19f3c8f7a",
+  "pandas>=2.1",
+  "numpy>=1.26",
+  "matplotlib>=3.8",
+]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.scripts]
 ffmm = "ffmm.cli:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ffmm"]

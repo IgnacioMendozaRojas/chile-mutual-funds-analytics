@@ -1,0 +1,58 @@
+name: Update data
+
+# Adds each new month from the CMF portal and rebuilds figures, latest.json and the README
+# "Latest reading" block. The CMF publishes month M around days 10-15 of M+1, so it runs on
+# the 16th and again on the 26th for late files. A run with nothing new makes no commit.
+on:
+  schedule:
+    - cron: "23 7 16,26 * *"
+  workflow_dispatch:
+    inputs:
+      rebuild:
+        description: "Recompute every month from 2019-01 (about an hour)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install --no-cache-dir .
+
+      - name: Add new months
+        id: update
+        continue-on-error: true
+        run: ffmm update ${{ inputs.rebuild && '--rebuild' || '' }}
+
+      - name: Rebuild figures, latest.json and README
+        run: ffmm build
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed docs/figures README.md
+          if git diff --cached --quiet; then
+            echo "::notice title=No changes::data/processed is up to date"
+          else
+            git commit -qm "Update data ($(jq -r .as_of data/processed/latest.json))"
+            git push
+          fi
+
+      - name: Fail if a month was blocked or is missing
+        if: steps.update.outcome == 'failure'
+        run: |
+          echo "::error title=Update incomplete::see the annotations above; the months that passed were committed"
+          exit 1

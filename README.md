@@ -11,6 +11,9 @@ Companion to [cmf-ffmm-etl](https://github.com/IgnacioMendozaRojas/cmf-ffmm-etl)
   <img alt="Holdings by asset class, 2019-2026" src="docs/figures/composition-light.png">
 </picture>
 
+<!-- latest:start -->
+<!-- latest:end -->
+
 ## Findings
 
 **1. The industry more than doubled, to CLP 79 trillion.** Holdings at market value went from CLP 32.9 trillion in January 2019 to CLP 79.2 trillion in September 2026. Fund units held by other funds are excluded, so nothing is counted twice. Almost all of the growth came after 2023.
