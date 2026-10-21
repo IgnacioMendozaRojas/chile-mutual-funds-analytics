@@ -68,6 +68,7 @@ class Chart:
     def __init__(self, theme: str, title: str, subtitle: str, source: str, size=(9, 4.8)):
         self.mode, self.t = theme, THEMES[theme]
         plt.rcParams["font.family"] = FONT
+        plt.rcParams["text.parse_math"] = False  # "US$" in titles must stay text
         self.fig, self.ax = plt.subplots(figsize=size, dpi=150)
         t, ax = self.t, self.ax
         self.fig.patch.set_facecolor(t["surface"])
