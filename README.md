@@ -44,7 +44,7 @@
 | Total holdings (fund-of-fund units excluded) | CLP 79.2 tn | CLP 79.0 tn | +0.2% |  |
 | Foreign-currency assets hedged with US$ forwards | 11.8% | 11.2% | +0.6 pp |  |
 
-*Updated automatically on 2026-10-21 from the CMF files. CLP tn = CLP trillion (10^12). A note gives the month when an indicator lags the others.*
+*Updated automatically on 2026-10-22 from the CMF files. CLP tn = CLP trillion (10^12). A note gives the month when an indicator lags the others.*
 <!-- latest:end -->
 
 ## Findings, as of September 2026
