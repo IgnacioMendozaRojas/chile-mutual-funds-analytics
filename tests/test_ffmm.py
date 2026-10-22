@@ -92,6 +92,9 @@ def test_fx_hedge_ratio(month):
 def test_month_aggregates_and_replace_is_idempotent(month, tmp_path):
     rows = aggregate(month)
     assert rows["fx_hedge"]["forwards_rescaled"].iloc[0] == 1
+    by_type = rows["bank_funding_by_type"]
+    assert set(by_type["asset_class"]) <= {"Bank deposits", "Bank bonds"}
+    assert by_type.loc[by_type["issuer_rut"] == "97006000", "bank"].iloc[0] == "BCI"
     store.replace_month(tmp_path, rows)
     store.replace_month(tmp_path, rows)  # same month again: replaced, not duplicated
     t = store.read_all(tmp_path)

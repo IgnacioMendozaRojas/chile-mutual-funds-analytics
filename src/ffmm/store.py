@@ -17,7 +17,7 @@ def read(out: Path, name: str) -> pd.DataFrame:
     p = path(out, name)
     if not p.exists():
         return pd.DataFrame(columns=TABLES[name])
-    return pd.read_csv(p, dtype={"period": str, "fund_run": str, "bank": str, "ticker": str})
+    return pd.read_csv(p, dtype={"period": str, "fund_run": str, "bank": str, "ticker": str, "issuer_rut": str})
 
 
 def read_all(out: Path) -> dict[str, pd.DataFrame]:

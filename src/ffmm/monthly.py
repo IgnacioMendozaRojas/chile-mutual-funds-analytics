@@ -21,6 +21,7 @@ TABLES = {
     "fx_hedge_by_fund": ["period", "fund_run"],
     "equities": ["period", "ticker"],
     "funds": ["period"],
+    "bank_funding_by_type": ["period", "issuer_rut", "asset_class"],
 }
 
 
@@ -28,6 +29,16 @@ def _long(wide: pd.DataFrame, name: str) -> pd.DataFrame:
     out = wide.rename_axis(columns=name).stack().rename("clp_bn").reset_index()
     out["period"] = out["period"].astype(str)
     return out[out["clp_bn"] != 0]
+
+
+def bank_funding_by_type(naci: pd.DataFrame, period: str) -> pd.DataFrame:
+    """Deposits and bonds held by funds, by issuing bank (RUT and label), for linking to bank balance sheets."""
+    b = naci[naci["asset_class"].isin({"Bank deposits", "Bank bonds"})]
+    labels = an.bank_labels(naci)
+    out = b.groupby(["issuer_rut", "asset_class"], as_index=False)["market_value_bn"].sum()
+    out.insert(0, "period", period)
+    out["bank"] = out["issuer_rut"].map(labels).fillna("")
+    return out.rename(columns={"market_value_bn": "clp_bn"})[["period", "issuer_rut", "bank", "asset_class", "clp_bn"]]
 
 
 def aggregate(month: Month) -> dict[str, pd.DataFrame]:
@@ -65,6 +76,7 @@ def aggregate(month: Month) -> dict[str, pd.DataFrame]:
     return {
         "composition": _long(comp, "asset_class"),
         "banks": _long(banks, "bank"),
+        "bank_funding_by_type": bank_funding_by_type(naci, p),
         "risk": risk.rename_axis("period").reset_index(),
         "fx_hedge": industry.rename_axis("period").reset_index(),
         "fx_hedge_by_fund": by_fund,
