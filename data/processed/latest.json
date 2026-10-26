@@ -6,7 +6,7 @@
   "question": "How much short-term funding do Chilean banks get from mutual funds, and how concentrated is it?",
   "as_of": "2026-09",
   "frequency": "monthly",
-  "updated": "2026-10-22",
+  "updated": "2026-10-26",
   "source": "CMF mutual fund portfolio files (NACI, EXTR, FUTU)",
   "headline": "Mutual funds held CLP 38.5 trillion of bank deposits and bonds in September 2026, 49% of everything they own; the six largest banks take 78%.",
   "metrics": [
