@@ -99,7 +99,7 @@ A full rebuild from 2019 (`--rebuild`, about an hour on GitHub) reproduces the p
 - **Units.** Market values are in thousands of CLP; tables report CLP billion (10^9). Currency code `PROM` is the US dollar (USD forwards strike at about 900). `CA` and `CU` mark share and fund-unit counts, not currencies.
 - **No double counting.** Units of other mutual funds (`CFM`) are left out of the industry totals.
 - **Bank names** are read from each issuer's deposit tickers (`FNSTD-…` is Santander), not typed in by hand.
-- **Forward cleaning.** The committed amount should equal notional × strike. Four rows reported it in pesos instead of thousands of pesos and are rescaled. 10,682 USD-forward rows (12% over 2019-2026) have an implied rate nowhere near the strike, typically a notional reported in pesos. They cannot be repaired and are excluded, so the hedge ratio is a lower bound. Interest-rate and UF swaps are not counted as FX hedges.
+- **Forward cleaning.** The committed amount should equal notional × strike. Four rows reported it in pesos instead of thousands of pesos and are rescaled; left as filed, the one in November 2020 (CLP 8.2 trillion) would have turned the industry's hedge ratio from 16% to -150%, and the three in January 2022 would have put it at 39% instead of 9%. 10,682 USD-forward rows (12% over 2019-2026) have an implied rate nowhere near the strike, typically a notional reported in pesos. They cannot be repaired and are excluded, so the hedge ratio is a lower bound. Interest-rate and UF swaps are not counted as FX hedges.
 - **Not covered.** Fund flows and returns (they need the CMF's daily fund-unit data), and fund-of-fund look-through.
 
 ## Use
