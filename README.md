@@ -32,19 +32,19 @@
 ## Latest reading
 
 <!-- latest:start -->
-**Latest reading: September 2026.** Mutual funds held CLP 38.5 trillion of bank deposits and bonds in September 2026, 49% of everything they own; the six largest banks take 78%.
+**Latest reading: October 2026.** Mutual funds held CLP 38.5 trillion of bank deposits and bonds in October 2026, 49% of everything they own; the six largest banks take 77%.
 
 | Indicator | Latest | Month before | Change | Note |
 |---|---:|---:|---:|---|
-| Bank deposits and bonds held by funds | CLP 38.5 tn | CLP 38.8 tn | -0.7% |  |
-| Share of fund holdings lent to banks | 48.6% | 49.1% | -0.5 pp |  |
-| Share taken by the six largest banks | 78.2% | 78.6% | -0.4 pp |  |
-| Domestic fixed income maturing within a year | 56.0% | 57.1% | -1.2 pp |  |
-| Average remaining maturity, domestic fixed income | 1.89 years | 1.80 years | +0.09 |  |
-| Total holdings (fund-of-fund units excluded) | CLP 79.2 tn | CLP 79.0 tn | +0.2% |  |
-| Foreign-currency assets hedged with US$ forwards | 11.8% | 11.2% | +0.6 pp |  |
+| Bank deposits and bonds held by funds | CLP 38.5 tn | CLP 38.5 tn | +0.1% |  |
+| Share of fund holdings lent to banks | 48.6% | 48.6% | -0.0 pp |  |
+| Share taken by the six largest banks | 76.8% | 78.2% | -1.4 pp |  |
+| Domestic fixed income maturing within a year | 56.3% | 56.0% | +0.4 pp |  |
+| Average remaining maturity, domestic fixed income | 1.89 years | 1.89 years | +0.00 |  |
+| Total holdings (fund-of-fund units excluded) | CLP 79.3 tn | CLP 79.2 tn | +0.2% |  |
+| Foreign-currency assets hedged with US$ forwards | 11.8% | 11.8% | -0.1 pp |  |
 
-*Updated automatically on 2026-10-26 from the CMF files. CLP tn = CLP trillion (10^12). A note gives the month when an indicator lags the others.*
+*Updated automatically on 2026-11-16 from the CMF files. CLP tn = CLP trillion (10^12). A note gives the month when an indicator lags the others.*
 <!-- latest:end -->
 
 ## Findings, as of September 2026
